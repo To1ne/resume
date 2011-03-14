@@ -1,0 +1,38 @@
+\moderncvtheme[blue]{classic}
+% possible themes are "classic" and "casual"
+% optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+
+% required
+\firstname{Toon}
+% required
+\familyname{Claes}
+
+% optional, remove the line if not wanted
+\title{Curriculum Vitae}
+
+% optional
+% \address{street and number}{postcode city}
+% '\\' adds a line break
+\address{Begoniastraat 17}{3930 Achel}
+
+% optional
+\phone{011/64 52 75}
+% optional
+\mobile{0478/65 79 77}
+% optional
+%\fax{+43(0)999 7777}
+% optional
+\email{claes.toon@telenet.be}
+% optional
+%\extrainfo{http://users.telenet.be/t1}
+
+% optional
+% \photo[height]{name}
+% 'height' is the height the picture is resized to
+% 'name' is the name of the picture file
+%\photo[64pt]{CV-image}
+
+% optional
+%\quote{"You only live twice." (an optional quote)}
+
+\AtBeginDocument{\maketitle}

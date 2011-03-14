@@ -1,0 +1,94 @@
+%% start of file `template_en.tex'.
+%% Copyright 2007 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper]{moderncv}
+
+% moderncv themes
+%\moderncvtheme[green]{casual}                % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\moderncvtheme[green]{classic}                % idem
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\recomputelengths                             % required when changes are made to page layout lengths
+
+% personal data
+\firstname{Toon}
+\familyname{Claes}
+\title{Curriculum Vitae}                      % optional, remove the line if not wanted
+\address{Begoniastraat 17}{3930 Achel}        % optional, remove the line if not wanted
+\mobile{0478/65 79 77}                        % optional, remove the line if not wanted
+\phone{011/64 52 75}                          % optional, remove the line if not wanted
+%\fax{fax (optional)}                         % optional, remove the line if not wanted
+\email{claes.toon@telenet.be}                 % optional, remove the line if not wanted
+%\extrainfo{additional information (optional)}% optional, remove the line if not wanted
+%\photo[64pt]{picture}                        % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{Some quote (optional)}                % optional, remove the line if not wanted
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\section{Opleiding}
+\cventry{2003-2008}{Master in de industriele wetenschappen ICT}{Katholieke Hogeschool Kempen}{Geel}{\textit{Grade}}{Description}  % arguments 3 to 6 are optional
+\cventry{1997-2003}{Industriele Wetenschappen}{WICO - Campus TIO}{Overpelt}{\textit{Grade}}{Description}  % arguments 3 to 6 are optional
+
+\section{Masterproef}
+\cvline{title}{\emph{Isolated Word Recognition Prototype}}
+\cvline{supervisors}{ir. Peter Karsmakers}
+\cvline{description}{\small Een prototype van spraakherkenner in MatLab}
+
+\section{Ervaring}
+%\subsection{Vocational}
+\cventry{2001-heden}{Vakantie- en weekendjob op plantenkwekerij}{Plantenkwekerij Rombouts bvba} %{City}{}{Description}                % arguments 3 to 6 are optional
+
+\section{Talenkennig}
+\cvlanguage{Nederlands}{Moedertaal}{}
+\cvlanguage{Engels}{Zeer goed}%{Comment}
+\cvlanguage{Frans}{Goed}%{Comment}
+\cvlanguage{Duits}{Basiskennis}
+
+\section{Computer skills}
+\cvcomputer{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
+\cvcomputer{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
+\cvcomputer{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+
+\section{Interests}
+\cvline{hobby 1}{\small Description}
+\cvline{hobby 2}{\small Description}
+\cvline{hobby 3}{\small Description}
+
+\closesection{}                   % needed to renewcommands
+\renewcommand{\listitemsymbol}{-} % change the symbol for lists
+
+\section{Extra 1}
+\cvlistitem{Item 1}
+\cvlistitem{Item 2}
+\cvlistitem[+]{Item 3}            % optional other symbol
+
+\section{Extra 2}
+\cvlistdoubleitem[\Neutral]{Item 1}{Item 4}
+\cvlistdoubleitem[\Neutral]{Item 2}{Item 5}
+\cvlistdoubleitem[\Neutral]{Item 3}{}
+
+% Publications from a BibTeX file
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}       % 'publications' is the name of a BibTeX file
+
+\end{document}
+
+
+%% end of file `template_en.tex'.
