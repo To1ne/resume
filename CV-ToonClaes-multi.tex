@@ -1,0 +1,125 @@
+%% Copyright 2007 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass[11pt,a4paper]{moderncv}
+
+% moderncv themes
+%\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\moderncvtheme[green]{classic}                % idem
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using<¯
+
+%\pagestyle{empty}
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\recomputelengths                             % required when changes are made to page layout lengths
+%\setlength{\parindent}{0pt}
+%\addtolength{\parskip}{6pt}
+
+\usepackage{url}
+\usepackage{etoolbox}                         % for \ifstrequal
+
+% personal data
+\firstname{Toon}
+\familyname{Claes}
+\title{Curriculum Vit\ae}                     % optional, remove the line if not wanted
+\address{Aarschotseweg 21-1}{2200 Herentals}  % optional, remove the line if not wanted
+\mobile{0478/65 79 77}                        % optional, remove the line if not wanted
+%\phone{011/64 52 75}                         % optional, remove the line if not wanted
+%\fax{fax (optional)}                         % optional, remove the line if not wanted
+\email{toon@iotcl.net}                        % optional, remove the line if not wanted
+\homepage{iotcl.net}                          % optional, remove the line if not wanted
+\extrainfo{27 oktober 1985}                   % optional, remove the line if not wanted
+%\photo[64pt]{picture}                        % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{Some quote (optional)}                % optional, remove the line if not wanted
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+\def\FileAuthor{\firstname \familyname}
+\def\FileTitle{\firstname \familyname's Curriculum Vit\ae}
+\def\FileSubject{Curriculum Vit\ae}
+\def\FileKeyWords{\firstname \familyname, Curriculum Vit\ae}
+
+\renewcommand{\ttdefault}{pcr}
+\urlstyle{tt}
+\usepackage[pdftex,pdfborder=0,breaklinks,baseurl=http://,pdfpagemode=None,pdfstartview=XYZ,pdfstartpage=1]{hyperref}
+  \hypersetup{
+    pdfauthor   = \FileAuthor,%
+    pdftitle    = \FileTitle,%
+    pdfsubject  = \FileSubject,%
+    pdfkeywords = \FileKeyWords,%
+    pdfcreator  = \LaTeX,%
+    pdfproducer = \LaTeX}
+
+% multi language support
+\newcommand{\setdoclang}[2]{%
+  \def\doclang{#2}%
+  \def\doclangshort{#1}%
+}
+\setdoclang{en}{English}
+
+\newcommand{\lang}[2]{%
+  \ifcsstring{doclangshort}{#1}{#2}{}%
+}
+
+\newcommand{\multilang}[2]{%
+  \lang{en}{#1}%
+  \lang{nl}{#2}%
+}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\section{\multilang{Education}{Opleiding}}
+\subsection{Hoger onderwijs}
+\cvline{2003--2008}{\textbf{Master in de industri\"{e}le wetenschappen ICT}, \emph{Katholieke Hogeschool Kempen}, Geel}
+\subsection{Secundair onderwijs}
+\cventry{1999--2003}{Industri\"{e}le Wetenschappen}{WICO - Campus TIO}{Overpelt}{}{}
+
+\section{Werkervaring}
+\cventry{2008--heden}{Software engineer}{}{}{}{} 
+\cvline{taken}{Programmatie van C \& C++ op embedded Linux betaalterminals}
+\cvline{bedrijf}{Tokheim Belgium nv}
+\cvline{adres}{Everdongenlaan 31}
+\cvline{}{2300 Turnhout}
+\cvline{telefoon}{014/44 85 00}
+\cvline{website}{\href{http://www.tokheim.com}{tokheim.com}}
+
+\cventry{2001--2008}{Vakantie- en weekendjob op plantenkwekerij}{}{}{}{} 
+\cvline{bedrijf}{Plantenkwekerij Rombouts bvba}
+\cvline{adres}{Kluizerdijk 140}
+\cvline{}{3930 Hamont-Achel}
+\cvline{telefoon}{011/802 862}
+\cvline{website}{\href{http://www.romboutsplanten.be}{romboutsplanten.be}}
+
+\section{Vaardigheden \& Kennis}
+\cvline{Programmeertalen}{C \& C++, VB.NET, Assembler (ARM)}
+\cvline{Scripttalen}{Perl, Ruby, Bash, Make}
+\cvline{Webgericht}{HTML \& XHTML, CSS, XML, JavaScript, PHP, SQL}
+\cvline{Besturingsystemen}{Microsoft Windows, Linux, Mac OS X}
+\cvline{Programma's}{Microsoft Office, Emacs, gdb, git}
+
+\section{Sociale vaardigheden}
+\subsection{Jeugdbeweging}
+\cvline{2002-2005}{3 jaar leider van Chiro, waarvan 2 jaar hoofdleider}
+\subsection{Studentenvereniging}
+\cvline{2004-2008}{4 jaar presidium, waarvan 1 jaar vice-preses}
+
+\section{Talenkennis}
+\cvlanguage{Nederlands}{moedertaal}{}
+\cvlanguage{Engels}{zeer goed}{}
+\cvlanguage{Frans}{bescheiden}{}
+
+\section{Interesses}
+\cvline{Hobbyprojecten}{in Ruby, PHP \& SQL, XHTML \& CSS, Emacs-lisp}
+\cvline{Sport}{Joggen}
+
+\end{document}
