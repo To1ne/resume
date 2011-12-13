@@ -22,6 +22,7 @@
 
 \usepackage{url}
 \usepackage{etoolbox}                         % for \ifcsstring
+\usepackage{enumitem}                         % to customize lists
 
 %%%%%%%%%% multi language support %%%%%%%%%%
 \newcommand{\setdoclang}[2]{%
@@ -35,7 +36,8 @@
   \lang{en}{#1}%
   \lang{nl}{#2}%
 }
-\setdoclang{en}{English}
+%\setdoclang{en}{English}
+\setdoclang{nl}{Nederlands}
 %%%%%%%%%% multi language support %%%%%%%%%%
 
 % personal data
@@ -81,6 +83,8 @@
     pdfcreator  = \LaTeX,%
     pdfproducer = \LaTeX}
 
+\setlist{topsep=0pt,itemsep=0pt,parsep=0pt}
+
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
@@ -88,47 +92,76 @@
 \maketitle
 
 \section{\multilang{Education}{Opleiding}}
-\subsection{Hoger onderwijs}
-\cvline{2003--2008}{\textbf{Master in de industri\"{e}le wetenschappen ICT}, \emph{Katholieke Hogeschool Kempen}, Geel}
-\subsection{Secundair onderwijs}
-\cventry{1999--2003}{Industri\"{e}le Wetenschappen}{WICO - Campus TIO}{Overpelt}{}{}
+%\subsection{Hoger onderwijs}
+\cventry{2003--2008}{%
+  \multilang{Master of Science, Electronics - ICT}%
+            {Master in de industri\"{e}le wetenschappen, Elektronica - ICT}%
+  }{\href{http://www.khk.be}{KHK}}{Geel}{}{%
+  \href{http://doks2.khk.be/eindwerk/do/record/Get?dispatch=view&recordId=SKHKff80808116c8e2a70116f20a090b040d}{%
+    Master thesis:\newline\emph{%
+      \multilang{Limited vocabulary speech recognition with Support Vector Machines}%
+                {Beperkte woordenschat spraakherkenning met Support Vector Machines}%
+      \newline%
+      \multilang{Prototype development in MATLAB}%
+                {Prototype ontwikkeling in MATLAB}%
+    }
+  }
+}
+%\subsection{Secundair onderwijs}
+\cventry{1999--2003}{\multilang{Industrial Sciences}%
+                               {Industri\"{e}le Wetenschappen}%
+                    }{WICO - Campus TIO}{Overpelt}{}{}
 
-\section{Werkervaring}
-\cventry{2008--heden}{Software engineer}{}{}{}{} 
-\cvline{taken}{Programmatie van C \& C++ op embedded Linux betaalterminals}
-\cvline{bedrijf}{Tokheim Belgium nv}
-\cvline{adres}{Everdongenlaan 31}
-\cvline{}{2300 Turnhout}
-\cvline{telefoon}{014/44 85 00}
-\cvline{website}{\href{http://www.tokheim.com}{tokheim.com}}
+\section{\multilang{Experience}{Werkervaring}}
+\subsection{\multilang{Professional}{Professioneel}}
+\cventry{2008--\multilang{present}{heden}}{Software engineer}{Tokheim}{Turnhout}{}{%
+  \multilang{Software development for embedded Linux payment devices.}%
+            {Software ontwikkeling voor embedded Linux betaalautomaten.}\newline%
+  \multilang{Achievements}{Prestaties}:%
+  \begin{itemize}%
+    \item Event-driven \& \multilang{object-oriented application design}%
+                                    {objectgeori\"{e}nteerd applicatie ontwerp} in C++%
+    \item Linux driver \multilang{programming}{programmatie}
+  \end{itemize}
+}
+\cvline{}{\href{http://www.tokheim.be}{tokheim.be}}
 
-\cventry{2001--2008}{Vakantie- en weekendjob op plantenkwekerij}{}{}{}{} 
-\cvline{bedrijf}{Plantenkwekerij Rombouts bvba}
-\cvline{adres}{Kluizerdijk 140}
-\cvline{}{3930 Hamont-Achel}
-\cvline{telefoon}{011/802 862}
-\cvline{website}{\href{http://www.romboutsplanten.be}{romboutsplanten.be}}
+\subsection{\multilang{Summer job}{Vakantiewerk}}
+\cventry{2001--2008}{\multilang{Plant nursery worker}{Arbeider op plantenkwekerij}%
+                    }{Rombouts bvba}{Achel}{}{}
+\cvline{}{\href{http://www.romboutsplanten.be}{romboutsplanten.be}}
 
-\section{Vaardigheden \& Kennis}
-\cvline{Programmeertalen}{C \& C++, VB.NET, Assembler (ARM)}
-\cvline{Scripttalen}{Perl, Ruby, Bash, Make}
-\cvline{Webgericht}{HTML \& XHTML, CSS, XML, JavaScript, PHP, SQL}
-\cvline{Besturingsystemen}{Microsoft Windows, Linux, Mac OS X}
-\cvline{Programma's}{Microsoft Office, Emacs, gdb, git}
+\section{\multilang{Skills \& Knowledge}{Vaardigheden \& Kennis}}
+\subsection{\multilang{Programming languages}{Programmeertalen}}
+\cvline{Expert}{C \& C++, GNU Make, Perl, Shell script}
+\cvline{\multilang{Intermediate}{Behoorlijk}}{Ruby, C\#, \LaTeX}
+\cvline{}{HTML \& XHTML, CSS, XML, JavaScript, PHP, SQL}
+\cvline{Beginner}{Objective-C}
 
-\section{Sociale vaardigheden}
-\subsection{Jeugdbeweging}
-\cvline{2002-2005}{3 jaar leider van Chiro, waarvan 2 jaar hoofdleider}
-\subsection{Studentenvereniging}
-\cvline{2004-2008}{4 jaar presidium, waarvan 1 jaar vice-preses}
+\subsection{\multilang{Systems \& Applications}{Systemen \& programma's}}
+\cvline{\multilang{Operating systems}{Besturingsystemen}}{Microsoft Windows, Linux, Mac OS X}
+\cvline{\multilang{Applications}{Programma's}}{Microsoft Office, Emacs, gdb, git}
 
-\section{Talenkennis}
-\cvlanguage{Nederlands}{moedertaal}{}
-\cvlanguage{Engels}{zeer goed}{}
-\cvlanguage{Frans}{bescheiden}{}
+\section{\multilang{Social skills}{Sociale vaardigheden}}
+\subsection{\multilang{Youth organisation}{Jeugdbeweging}}
+\cvline{2002-2005}{\multilang{3 year leader, including 2 year head leader.}%
+                             {3 jaar leider van Chiro, waarvan 2 jaar hoofdleider.}
+}
+\subsection{\multilang{Student society}{Studentenvereniging}}
+\cvline{2004-2008}{\multilang{4 year active member of the executive committee.}%
+                             {4 jaar presidium, waarvan 1 jaar vice-preses.}
+}
 
-\section{Interesses}
-\cvline{Hobbyprojecten}{in Ruby, PHP \& SQL, XHTML \& CSS, Emacs-lisp}
-\cvline{Sport}{Joggen}
+\section{\multilang{Languages}{Talenkennis}}
+\cvlanguage{\multilang{Dutch}{Nederlands}}{\multilang{native}{moedertaal}}{}
+\cvlanguage{\multilang{English}{Engels}}{\multilang{very good}{zeer goed}}{}
+\cvlanguage{\multilang{French}{Frans}}{\multilang{sober}{bescheiden}}{}
+
+\section{\multilang{Interests}{Interesses}}
+\cvline{\multilang{Hobby projects}{Hobbyprojecten}}{in Ruby, PHP \& SQL, XHTML \& CSS, Emacs-lisp, \ldots}
+\cvline{Sport}{\multilang{Running}{Joggen}}
+
+\section{\multilang{Information}{Informatie}}
+\cvline{website}{\href{http://iotcl.net}{iotcl.net}}
 
 \end{document}
