@@ -1,28 +1,42 @@
-%% Copyright 2007 Xavier Danaux (xdanaux@gmail.com).
+%% start of file `template.tex'.
+%% Copyright 2006-2011 Xavier Danaux (xdanaux@gmail.com).
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
 
+
 \documentclass[11pt,a4paper]{moderncv}
 
 % moderncv themes
-%\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
 \moderncvtheme[green]{classic}                % idem
 
 % character encoding
-\usepackage[utf8]{inputenc}                   % replace by the encoding you are using<¯
-
-%\pagestyle{empty}
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
 
 % adjust the page margins
 \usepackage[scale=0.8]{geometry}
-\recomputelengths                             % required when changes are made to page layout lengths
-%\setlength{\parindent}{0pt}
-%\addtolength{\parskip}{6pt}
+%\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
+%\setlength{\maketitlenamewidth}{10cm}}       % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
 
 \usepackage{url}
-\usepackage{etoolbox}                         % for \ifstrequal
+\usepackage{etoolbox}                         % for \ifcsstring
+
+%%%%%%%%%% multi language support %%%%%%%%%%
+\newcommand{\setdoclang}[2]{%
+  \def\doclang{#2}%
+  \def\doclangshort{#1}%
+}
+\newcommand{\lang}[2]{%
+  \ifcsstring{doclangshort}{#1}{#2}{}%
+}
+\newcommand{\multilang}[2]{%
+  \lang{en}{#1}%
+  \lang{nl}{#2}%
+}
+\setdoclang{en}{English}
+%%%%%%%%%% multi language support %%%%%%%%%%
 
 % personal data
 \firstname{Toon}
@@ -35,15 +49,26 @@
 \email{toon@iotcl.net}                        % optional, remove the line if not wanted
 \homepage{iotcl.net}                          % optional, remove the line if not wanted
 \extrainfo{27 oktober 1985}                   % optional, remove the line if not wanted
-%\photo[64pt]{picture}                        % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\photo[64pt][0.4pt]{picture}                 % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
 %\quote{Some quote (optional)}                % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
 
 %\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
 
 \def\FileAuthor{\firstname \familyname}
 \def\FileTitle{\firstname \familyname's Curriculum Vit\ae}
 \def\FileSubject{Curriculum Vit\ae}
-\def\FileKeyWords{\firstname \familyname, Curriculum Vit\ae}
+\def\FileKeyWords{\firstname \familyname, Curriculum Vit\ae, CV%
+  \lang{en}{, R\'{e}sum\'{e}}%
+}
 
 \renewcommand{\ttdefault}{pcr}
 \urlstyle{tt}
@@ -55,22 +80,6 @@
     pdfkeywords = \FileKeyWords,%
     pdfcreator  = \LaTeX,%
     pdfproducer = \LaTeX}
-
-% multi language support
-\newcommand{\setdoclang}[2]{%
-  \def\doclang{#2}%
-  \def\doclangshort{#1}%
-}
-\setdoclang{en}{English}
-
-\newcommand{\lang}[2]{%
-  \ifcsstring{doclangshort}{#1}{#2}{}%
-}
-
-\newcommand{\multilang}[2]{%
-  \lang{en}{#1}%
-  \lang{nl}{#2}%
-}
 
 %----------------------------------------------------------------------------------
 %            content
