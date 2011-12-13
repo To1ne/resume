@@ -1,12 +1,26 @@
-TEXDIR = /usr/texbin/
-PDFLATEX = $(TEXDIR)pdflatex
+all: nl en
 
-#all: $(patsubst %.tex,%.pdf,$(wildcard *.tex))
-all: nl
+clean:
+	rm -f *.aux *.log *.out
 
-nl: CV-ToonClaes-nl.pdf
+distclean: clean
+	rm -f *.pdf
 
 %.pdf: %.tex
 	$(PDFLATEX) $<
 
-.PHONY: all nl
+%.pdf: CV-ToonClaes-multi.tex
+	sed -E "s/\\setdoclang\{[^\}]+\}\{[^\}]+\}/\\setdoclang\{$(auto_lang)\}\{$(auto_lang)\}/" CV-ToonClaes-multi.tex | $(PDFLATEX) --jobname=$*
+
+TEXDIR:=/usr/texbin/
+PDFLATEX:=$(TEXDIR)pdflatex
+
+CV_FILENAME_STEM:=CV-ToonClaes-
+
+auto_lang=$(patsubst $(CV_FILENAME_STEM)%,%,$*)
+
+.PHONY: all nl clean distclean
+
+nl: CV-ToonClaes-nl.pdf
+en: CV-ToonClaes-en.pdf
+
