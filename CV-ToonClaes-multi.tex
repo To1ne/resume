@@ -8,13 +8,23 @@
 
 \documentclass[11pt,a4paper]{moderncv}
 
+\usepackage{lmodern}% Latin Modern typeface (font)
+%\usepackage[T1]{fontenc}% T1 font encoding for high quality font output
+\renewcommand{\familydefault}{\sfdefault}% Latin Modern's sans serif font family as default
+
+
+
+\usepackage{etoolbox}
+\patchcmd{\section}{\vspace*{2.5ex}}{\vspace{2.5ex}}{}{}
+\patchcmd{\subsection}{\vspace*{2.5ex}}{\vspace{2.5ex}}{}{}
+
 % moderncv themes
 %\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
 \moderncvtheme[green]{classic}                % idem
 
 % character encoding
 \usepackage[utf8]{inputenc}                   % replace by the encoding you are using
-
+  
 % adjust the page margins
 \usepackage[scale=0.8]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
@@ -74,14 +84,8 @@
 
 \renewcommand{\ttdefault}{pcr}
 \urlstyle{tt}
-\usepackage[pdftex,pdfborder=0,breaklinks,baseurl=http://,pdfpagemode=None,pdfstartview=XYZ,pdfstartpage=1]{hyperref}
-  \hypersetup{
-    pdfauthor   = \FileAuthor,%
-    pdftitle    = \FileTitle,%
-    pdfsubject  = \FileSubject,%
-    pdfkeywords = \FileKeyWords,%
-    pdfcreator  = \LaTeX,%
-    pdfproducer = \LaTeX}
+
+\PassOptionsToPackage{pdftex,pdfborder=0,breaklinks,baseurl=http://,pdfpagemode=None,pdfstartview=XYZ,pdfstartpage=1}{hyperref}
 
 \setlist{topsep=0pt,itemsep=0pt,parsep=0pt}
 
@@ -89,6 +93,15 @@
 %            content
 %----------------------------------------------------------------------------------
 \begin{document}
+\hypersetup{
+  pdfauthor   = \FileAuthor,%
+  pdftitle    = \FileTitle,%
+  pdfsubject  = \FileSubject,%
+  pdfkeywords = \FileKeyWords,%
+  pdfcreator  = \LaTeX,%
+  pdfproducer = \LaTeX
+}
+
 \maketitle
 
 \section{\multilang{Education}{Opleiding}}
@@ -139,13 +152,13 @@
 \section{\multilang{Skills \& Knowledge}{Vaardigheden \& Kennis}}
 \subsection{\multilang{Programming languages}{Programmeertalen}}
 \cvline{Expert}{C \& C++, GNU Make, Perl, Shell script}
-\cvline{\multilang{Intermediate}{Behoorlijk}}{Ruby, C\#, \LaTeX}
-\cvline{}{HTML \& XHTML, CSS, XML, JavaScript, PHP, SQL}
-\cvline{Beginner}{Objective-C}
+\cvline{\multilang{Intermediate}{Behoorlijk}}{Ruby, Objective-C, C\#, \LaTeX}
+\cvline{}{HTML5, CSS \& SASS, XML, JavaScript, PHP, SQL}
 
+\clearpage
 \subsection{\multilang{Systems \& Applications}{Systemen \& programma's}}
-\cvline{\multilang{Operating systems}{Besturingsystemen}}{Microsoft Windows, Linux, Mac OS X}
-\cvline{\multilang{Applications}{Programma's}}{Microsoft Office, Emacs, gdb, git}
+\cvline{\multilang{Operating systems}{Besturings\-systemen}}{Microsoft Windows, Linux (openSUSE), Mac OS X}
+\cvline{\multilang{Applications}{Programma's}}{Microsoft Office, Emacs, gdb, git, Perforce}
 
 \section{\multilang{Social skills}{Sociale vaardigheden}}
 \subsection{\multilang{Youth organisation}{Jeugdbeweging}}
@@ -163,7 +176,7 @@
 %\cvlanguage{\multilang{French}{Frans}}{\multilang{sober}{bescheiden}}{}
 
 \section{\multilang{Interests}{Interesses}}
-\cvline{\multilang{Hobby projects}{Hobbyprojecten}}{in Ruby, PHP \& SQL, XHTML \& CSS, Emacs-lisp, \ldots}
+\cvline{\multilang{Hobby projects}{Hobbyprojecten}}{in Objective-C iOS, Ruby, HTML5 \& CSS, Emacs-lisp, \ldots}
 \cvline{Sport}{\multilang{Running}{Hardlopen}}
 
 \section{\multilang{Information}{Informatie}}
