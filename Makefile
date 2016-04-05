@@ -15,8 +15,9 @@ install:
 %.pdf: CV-ToonClaes-multi.tex
 	sed -E "s/\\setdoclang\{[^\}]+\}\{[^\}]+\}/\\setdoclang\{$(auto_lang)\}\{$(auto_lang)\}/" CV-ToonClaes-multi.tex | $(PDFLATEX) --jobname=$*
 
-TEXDIR:=/usr/texbin/
-PDFLATEX:=$(TEXDIR)pdflatex
+#TEXDIR:=/usr/texbin/
+TEXDIR?=/usr/local/texlive/2015/bin/x86_64-darwin
+PDFLATEX:=$(TEXDIR)/pdflatex
 
 CV_FILENAME_STEM:=CV-ToonClaes-
 
