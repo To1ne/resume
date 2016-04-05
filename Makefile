@@ -26,4 +26,3 @@ auto_lang=$(patsubst $(CV_FILENAME_STEM)%,%,$*)
 
 nl: CV-ToonClaes-nl.pdf
 en: CV-ToonClaes-en.pdf
-
